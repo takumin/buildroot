@@ -1,0 +1,10 @@
+config BR2_PACKAGE_HOST_GTK_DOC
+	bool "host gtk-doc"
+	select BR2_PACKAGE_HOST_ITSTOOL
+	select BR2_PACKAGE_HOST_LIBXSLT
+	select BR2_PACKAGE_HOST_PYTHON3
+	select BR2_PACKAGE_HOST_PYTHON_PYGMENTS
+	help
+	  Documentation generator for C code.
+
+	  https://gitlab.gnome.org/GNOME/gtk-doc

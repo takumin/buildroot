@@ -1,0 +1,7 @@
+config BR2_PACKAGE_ISO_CODES
+	bool "iso-codes"
+	help
+	  ISO language, territory, currency, script codes
+	  and their translations.
+
+	  https://salsa.debian.org/iso-codes-team/iso-codes

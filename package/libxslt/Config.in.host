@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HOST_LIBXSLT
+	bool "host libxslt"
+	select BR2_PACKAGE_HOST_LIBXML2
+	help
+	  Applying XSLT stylesheets to XML documents.
+
+	  https://gitlab.gnome.org/GNOME/libxslt/-/wikis/home

@@ -1,0 +1,9 @@
+config BR2_PACKAGE_HOST_YELP_XSL
+	bool "host yelp-xsl"
+	select BR2_PACKAGE_HOST_ITSTOOL
+	select BR2_PACKAGE_HOST_LIBXML2
+	select BR2_PACKAGE_HOST_LIBXSLT
+	help
+	  Yelp documentation tools.
+
+	  https://wiki.gnome.org/Apps/Yelp/Tools

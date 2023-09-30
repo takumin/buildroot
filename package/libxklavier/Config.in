@@ -1,0 +1,33 @@
+config BR2_PACKAGE_LIBXKLAVIER
+	bool "libxklavier"
+	depends on BR2_PACKAGE_XORG7
+	depends on BR2_USE_WCHAR # glib2
+	depends on BR2_TOOLCHAIN_HAS_THREADS # glib2
+	depends on BR2_USE_MMU # glib2
+	select BR2_PACKAGE_ISO_CODES
+	select BR2_PACKAGE_LIBGLIB2
+	select BR2_PACKAGE_LIBXML2
+	select BR2_PACKAGE_XLIB_LIBX11
+	help
+	  libxklavier is a library providing high-level API for
+	  X Keyboard Extension known as XKB.
+
+	  https://www.freedesktop.org/wiki/Software/LibXklavier/
+
+if BR2_PACKAGE_LIBXKLAVIER
+
+config BR2_PACKAGE_LIBXKLAVIER_XKB_SUPPORT
+	bool "enable xkb support"
+	default y
+	select BR2_PACKAGE_XLIB_LIBXKBFILE
+	help
+	  Enable XKB support
+
+config BR2_PACKAGE_LIBXKLAVIER_XMODMAP_SUPPORT
+	bool "enable xmodmap support"
+	default y
+	select BR2_PACKAGE_XAPP_XMODMAP
+	help
+	  Enable xmodmap support
+
+endif

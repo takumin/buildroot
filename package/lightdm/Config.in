@@ -1,0 +1,26 @@
+config BR2_PACKAGE_LIGHTDM
+	bool "lightdm"
+	depends on BR2_PACKAGE_XORG7
+	depends on BR2_PACKAGE_LIBGPG_ERROR_ARCH_SUPPORTS # libgcrypt
+	depends on (BR2_ENABLE_LOCALE && BR2_USE_WCHAR) # linux-pam
+	depends on !BR2_STATIC_LIBS # linux-pam
+	depends on BR2_USE_MMU # linux-pam
+	select BR2_PACKAGE_HOST_GTK_DOC
+	select BR2_PACKAGE_HOST_LIBXML2
+	select BR2_PACKAGE_HOST_YELP_TOOLS
+	select BR2_PACKAGE_LIBGCRYPT
+	select BR2_PACKAGE_LIBGLIB2
+	select BR2_PACKAGE_LIBXCB
+	select BR2_PACKAGE_LIBXKLAVIER
+	select BR2_PACKAGE_LINUX_PAM
+	select BR2_PACKAGE_XLIB_LIBX11
+	select BR2_PACKAGE_XLIB_LIBXDMCP
+	help
+	  LightDM is a lightweight, cross-desktop display manager.
+
+	  https://github.com/canonical/lightdm
+
+comment "lightdm needs a toolchain w/ wchar, locale, dynamic library"
+	depends on BR2_PACKAGE_XORG7
+	depends on !(BR2_ENABLE_LOCALE && BR2_USE_WCHAR) \
+		|| BR2_STATIC_LIBS
